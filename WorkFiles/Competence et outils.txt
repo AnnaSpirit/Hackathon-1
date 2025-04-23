@@ -1,0 +1,53 @@
+💪🏻 Python
+
+Modules : os, sqlite3
+
+Style & structure : fonctions modulaires (init_db, start_new_game, etc.), f-strings, comprehensions de liste
+
+💪🏻 SQL
+
+Script externe (pawn_to_king.sql) : CREATE TABLE IF NOT EXISTS (games, pieces, moves)
+
+Exécution via conn.executescript(), requêtes préparées (?), clés étrangères
+
+Inspection du schéma (sqlite_master)
+
+💪🏻 Effets visuels CLI
+
+Indentation du plateau (marge à gauche)
+
+Couleurs ANSI (classe Ansi : BOLD, DIM, couleurs pour pièces et cases)
+
+💪🏻 Documentation
+
+README en Markdown (clonage Git, install Python, VS Code, SQLTools, lancement)
+
+Mini Chess Movement Guide (déplacements de chaque pièce)
+
+----------------------------------------------------------------------
+
+💪🏻 Python
+
+Modules: bone, sqlite3
+
+Style and structure: modular functions (INIT_DB, Start_New_Game, etc.), F-STRINGS, List comprehensions
+
+💪🏻 SQL
+
+External script (Pawn_to_king.sql): Create a table if it does not exist (games, parts, movements)
+
+Dencution via conn.execitescript (), prepared requests (?), Foreign keys
+
+Inspection of the Schema (sqlite_master)
+
+💪🏻 Visual CLI effect
+
+Indentation of the plateau (margin on the left)
+
+Ansi colors (Ansi class: fatty boxes, dark, colors for rooms and cases)
+
+💪🏻 Documentation
+
+Readm in Markdown (Git cloning, install python, vs code, sqltools, launch)
+
+Mini chess movement guide (playing of each room)

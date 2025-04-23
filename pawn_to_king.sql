@@ -1,46 +1,29 @@
--- Database: pawn_to_king
+-- pawn_to_king.sql (pour SQLite)
+CREATE TABLE IF NOT EXISTS games (
+  game_id     INTEGER PRIMARY KEY AUTOINCREMENT,
+  started_at  DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 
--- DROP DATABASE IF EXISTS pawn_to_king;
+CREATE TABLE IF NOT EXISTS pieces (
+  piece_id    INTEGER PRIMARY KEY AUTOINCREMENT,
+  game_id     INTEGER,
+  type        TEXT,
+  color       TEXT,
+  row         INTEGER,
+  col         INTEGER,
+  has_moved   INTEGER DEFAULT 0,
+  FOREIGN KEY(game_id) REFERENCES games(game_id)
+);
 
--- CREATE DATABASE pawn_to_king
---     WITH
---     OWNER = postgres
---     ENCODING = 'UTF8'
---     LC_COLLATE = 'French_France.1252'
---     LC_CTYPE = 'French_France.1252'
---     LOCALE_PROVIDER = 'libc'
---     TABLESPACE = pg_default
---     CONNECTION LIMIT = -1
---     IS_TEMPLATE = False;
-
---création de la base et des tables
--- CREATE TABLE games (
---     game_id   INTEGER PRIMARY KEY,
---     created_at TEXT DEFAULT CURRENT_TIMESTAMP
--- );
-
--- CREATE TABLE pieces (
---     piece_id  INTEGER PRIMARY KEY,
---     game_id   INTEGER NOT NULL,
---     type      TEXT    NOT NULL,     -- 'king','queen','rook','bishop','knight','pawn'
---     color     TEXT    NOT NULL,     -- 'white' ou 'black'
---     row       INTEGER NOT NULL,     -- 1 à 8
---     col       INTEGER NOT NULL,     -- 1 à 8
---     has_moved BOOLEAN DEFAULT TRUE,      -- pour le roque ou la prise en passant
---     FOREIGN KEY(game_id) REFERENCES games(game_id)
--- );
-
--- CREATE TABLE moves (
---     move_id    INTEGER PRIMARY KEY,
---     game_id    INTEGER NOT NULL,
---     piece_id   INTEGER NOT NULL,
---     from_row   INTEGER NOT NULL,
---     from_col   INTEGER NOT NULL,
---     to_row     INTEGER NOT NULL,
---     to_col     INTEGER NOT NULL,
---     captured_piece_id INTEGER,      -- NULL si pas de capture
---     moved_at   TEXT DEFAULT CURRENT_TIMESTAMP,
---     FOREIGN KEY(game_id) REFERENCES games(game_id),
---     FOREIGN KEY(piece_id) REFERENCES pieces(piece_id),
---     FOREIGN KEY(captured_piece_id) REFERENCES pieces(piece_id)
--- );
+CREATE TABLE IF NOT EXISTS moves (
+  move_id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  game_id            INTEGER,
+  piece_id           INTEGER,
+  from_row           INTEGER,
+  from_col           INTEGER,
+  to_row             INTEGER,
+  to_col             INTEGER,
+  captured_piece_id  INTEGER,
+  FOREIGN KEY(game_id) REFERENCES games(game_id),
+  FOREIGN KEY(piece_id) REFERENCES pieces(piece_id)
+);
