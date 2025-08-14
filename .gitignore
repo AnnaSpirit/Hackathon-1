@@ -1,1 +1,84 @@
-WorkFiles/Hackathon1 Presentation.mp4"
+# ——— Dossiers à ignorer individuellement ———
+
+# Éditeur / config locale
+
+.vscode/
+
+# Ignorer certains sous-dossiers de travail dans /Bases
+
+
+
+# Ignorer certains sous-dossiers de travail 
+
+
+
+# Ignore Word ou Excel documents + présentation vidéo
+
+*.docx
+*.xlsx
+*.mp4
+
+# Ignore fichier system
+
+*.ini 
+.DS_Store
+Thumbs.db
+
+# === 🐞 Fichiers de log générés lors d'erreurs ou du debug ===
+
+*.log
+
+
+# Ignorer tous les dossiers screenshot_course, peu importe où ils sont
+
+**/screenshot_course/
+
+# Fichier sensible
+
+
+
+# ——— Node 🔰 —
+
+# Ignorer node_modules et package-lock
+**/node_modules/
+**/package-lock.json
+
+# ——— Python 🐍 ———
+
+# Environnements virtuels
+venv/
+env/
+.venv/
+.env/
+
+# Cache Python
+
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Fichiers d'environnement (API keys etc)
+
+.env
+.env.*
+
+# Logs et bases locales
+
+*.log
+*.sqlite3
+
+# Fichiers de packaging/build
+
+*.spec
+dist/
+build/
+*.egg-info/
+
+# Ne PAS ignorer Thunder Client (=Postman)
+
+!.vscode/thunder-tests/**
+
+
+
+# AnnaSpirit Approved™ 🔥🐍🚀
+
